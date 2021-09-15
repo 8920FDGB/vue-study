@@ -9,14 +9,10 @@
 </head>
 <body>
   <div id="app">
-    <p>{{ customer_list[1] }}さん、いらっしゃいませ!</p>
-    <p>商品名 : {{ item.name }}, 値段 : {{ item.price }} </p>
-    <p>{{ amount }}個なので、合計は{{ sumPrice }}円です！</p>
-
-    <br>
-
-    <p>算出プロパティで作成した乱数：{{ randomFromComputed }}</p>
-    <p>メソッドで作成した乱数：{{ randomFromMethods() }}</p>
+    <p>卵やけたかな</p>
+    <p>卵：{{ egg_status }}</p>
+    <p>算出プロパティ：{{ checkEgg }}</p>
+    <p>ウォッチャ：{{ message }}</p>
   </div>
 
   <script src="./index.js"></script>

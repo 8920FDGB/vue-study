@@ -1,24 +1,26 @@
 var app = new Vue({
   el: '#app',
   data: {
-    customer_list: ['いぬ', 'きじ', 'さる'],
-    item: {
-      name: 'モンブラン',
-      price: 100
-    },
-    amount: 3,
+    egg_status: '半熟',
+    message : '....',
   },
   computed: {
-    sumPrice: function () {
-      return this.item.price * this.amount
-    },
-    randomFromComputed: function () {
-      return Math.random()
+    checkEgg: function () {
+      if (this.egg_status == '完熟') {
+        return 'やけたよ！'
+      } else {
+        return 'まだまだ'
+      }
     }
   },
-  methods: {
-    randomFromMethods: function () {
-      return Math.random();
+  watch : {
+    egg_status: function () {
+      var vm = this;
+      setTimeout(function () {
+        console.log(this);
+        console.log(vm);
+        vm.message = 'かわったよ！'
+      }, 3000);
     }
   }
 })
