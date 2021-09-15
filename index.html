@@ -9,10 +9,10 @@
 </head>
 <body>
   <div id="app">
-    <p>卵やけたかな</p>
-    <p>卵：{{ egg_status }}</p>
-    <p>算出プロパティ：{{ checkEgg }}</p>
-    <p>ウォッチャ：{{ message }}</p>
+    <button v-on:click="light = true">ON</button>
+    <button v-on:click="light = false">OFF</button>
+    <p v-if="light">点灯！</p>
+    <p v-show="light">点灯！(v-show)</p>
   </div>
 
   <script src="./index.js"></script>
