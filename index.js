@@ -17,8 +17,10 @@ var app = new Vue({
         return Math.max(a, b);
       });
 
+      var name = this.$refs.name.value;
+
       this.team.push(
-        {name: "ななし", id: max_id + 1}
+        {name: name, id: max_id + 1}
       );
     }
   }
