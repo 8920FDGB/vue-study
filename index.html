@@ -9,10 +9,12 @@
 </head>
 <body>
   <div id="app">
-    <button v-on:click="light = true">ON</button>
-    <button v-on:click="light = false">OFF</button>
-    <p v-if="light">点灯！</p>
-    <p v-show="light">点灯！(v-show)</p>
+    <button v-on:click="addMember">要素追加</button>
+    <ul>
+      <li v-for="member in team" :key="team.id">
+        名前：{{ member.name }} 学籍番号：{{ member.id }}
+      </li>
+    </ul>
   </div>
 
   <script src="./index.js"></script>
