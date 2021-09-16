@@ -1,27 +1,20 @@
+var myName = {
+  template: '<p>私の名前はBobです！</p>'
+};
+
+var myButton = {
+  data: function () {
+    return {
+      count: 0
+    }
+  },
+  template: '<button v-on:click="count++">{{ count }}</button>'
+};
+
 var app = new Vue({
   el: '#app',
-  data: {
-    team: [
-      {name: "たかし", id: 1},
-      {name: "あきら", id: 2},
-      {name: "つとむ", id: 3},
-    ]
-  },
-  methods: {
-    addMember: function () {
-      var ids = this.team.map(function (member) {
-        return member.id;
-      });
-
-      var max_id = ids.reduce(function (a, b) {
-        return Math.max(a, b);
-      });
-
-      var name = this.$refs.name.value;
-
-      this.team.push(
-        {name: name, id: max_id + 1}
-      );
-    }
+  components: {
+    'my-name' : myName,
+    'my-button' : myButton,
   }
 })
